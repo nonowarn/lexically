@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Lexically::VERSION
   spec.authors       = ["nonowarn"]
   spec.email         = ["nonowarn@gmail.com"]
+  spec.licenses    = ['MIT']
 
   spec.summary       = %q{Defining methods cannot be called from derived class.}
   spec.description   = %q{Using the refinements mechanism, This gem allows you to mark methods with the visibility like `private`, but it's more like Java's or PHP's `private`. i.e. `lexically` defines methods cannot be called from derived class.}
