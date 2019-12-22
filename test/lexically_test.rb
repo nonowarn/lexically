@@ -21,6 +21,24 @@ class LexicallyTest < Minitest::Test
     end
   end
 
+  module TestModule
+    include Lexically
+
+    using lexically {
+      def module_lexical_method
+        :module_lexical
+      end
+    }
+
+    def call_module_lexical_method
+      module_lexical_method
+    end
+  end
+
+  class TestModuleClass
+    include TestModule
+  end
+
   def test_method_can_call_lexically_defined_method
     assert_equal :lexical, TestClass.new.call_lexical_method
   end
@@ -37,6 +55,17 @@ class LexicallyTest < Minitest::Test
       TestDerivedClass.new.lexical_method
     end
     assert_includes err.message, "undefined method `lexical_method'"
+  end
+
+  def test_method_can_call_module_lexical_method
+    assert_equal :module_lexical, TestModuleClass.new.call_module_lexical_method
+  end
+
+  def test_module_lexcally_defined_method_cannot_be_called_from_outside
+    err = assert_raises NameError do
+      TestModuleClass.new.module_lexical_method
+    end
+    assert_includes err.message, "undefined method `module_lexical_method'"
   end
 
 end
