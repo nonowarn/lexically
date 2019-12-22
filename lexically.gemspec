@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["nonowarn"]
   spec.email         = ["nonowarn@gmail.com"]
 
-  spec.summary       = %q{Provides "lexically" visibility to classes or modules}
-  spec.description   = %q{Using refinements mechanisms, this module provides defning methods cannot be called from outside of the classes or modules}
+  spec.summary       = %q{Defining methods cannot be called from derived class.}
+  spec.description   = %q{Using the refinements mechanism, This gem allows you to mark methods with the visibility like `private`, but it's more like Java's or PHP's `private`. i.e. `lexically` defines methods cannot be called from derived class.}
   spec.homepage      = "http://nonowarn.jp"
 
   # Specify which files should be added to the gem when it is released.

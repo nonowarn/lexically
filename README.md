@@ -1,6 +1,6 @@
 # Lexically
 
-Using the refinements mechanism, This gem allows you to mark methods with the visibility like `private`, but it's more like Java's or PHP's `private`. i.e. `lexically` defined class cannot be called from derived class.
+Using the refinements mechanism, This gem allows you to mark methods with the visibility like `private`, but it's more like Java's or PHP's `private`. i.e. `lexically` defines methods cannot be called from derived class.
 
 ## Installation
 
