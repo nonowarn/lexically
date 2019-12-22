@@ -2,7 +2,7 @@ require "lexically/version"
 
 # Provides `lexically` method by including this module. Methods
 # defined inside of `lexically`-block have similar visibility to
-# private method, But it's not called fron derived classes
+# private method, But it's not called fron derived classes.
 #
 # @example Basic usage
 #   class C
@@ -35,10 +35,10 @@ module Lexically
 
   module ClassMethods
 
-    # Returns a refinement refines the class itself.
+    # Returns a refinement refines the class or the module itself.
     #
     # The refinement creates its scope cannot be visible from the
-    # outside of the class.
+    # outside of the class or the module.
     #
     # @return [Module]
     def lexically(&block)
